@@ -1,14 +1,29 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
+    <ion-toolbar>
+      <ion-buttons start>
+      </ion-buttons>
+      <ion-title> Bienes Raices</ion-title>
+      <ion-buttons end>
+        <button (click)="clickCarrito()" ion-button icon-only color="royal">
+          <ion-icon name="md-cart"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+
+  <ion-content padding  style = "background-color: dimgray">
+    <ion-card style = "border-radius: 10ptx" *ngFor="let casa of Casas">
+        <ion-item [ngStyle]="{'background-color': casa.color}">
+          <ion-col item-start>
+            <img [src] = casa.imagen  (click)="clickCasa(casa)">
+          </ion-col>
+          <h2> {{casa.casa}} </h2>
+          <p> {{casa.precio}} </p>
+        </ion-item>
+    </ion-card>
+    
+
 </ion-content>
+

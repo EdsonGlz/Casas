@@ -1,0 +1,23 @@
+<!--
+  Generated template for the CarritoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Carrito</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding  style = "background-color: dimgray">
+    <ion-card style = "border-radius: 10ptx" *ngFor="let casa of carrito">
+          <ion-col item-start>
+            <img style ="height: 400px; width: 500px " [src] = casa.imagen>
+          </ion-col>
+          <h2> {{casa.casa}} </h2>
+          <p> {{casa.precio}} </p>
+    </ion-card>
+</ion-content>
